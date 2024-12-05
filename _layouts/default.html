@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/loader.css' | relative_url }}">
+
+</head>
+<body>
+    <header>
+        <h1>예슬 블로그</h1>
+        <nav>
+            <ul>
+                {% for tag in site.tags %}
+                <li><a href="{{ '/' | tag.TAG}}">{{tag}}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
+
+  {{ content }}
+</body>
+</html>
