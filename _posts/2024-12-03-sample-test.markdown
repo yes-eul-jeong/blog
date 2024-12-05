@@ -6,5 +6,3 @@ categories: jekyll update
 ---
 
 여기에 내용을 입력하면 포스트로 들어가는거야?
-
-{{ page.title }}

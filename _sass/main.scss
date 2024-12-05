@@ -1,5 +1,21 @@
 
-h1 {
-    font-size: 50px;
-    color: red;
+
+
+body {
+    font-family: 'SUIT Variable', sans-serif;
+    max-width: 900px !important;
 }
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+h1,h2,h3,h4,h5,p {
+    margin: 0;
+}
+h1,h2,h3,h4,h5 {
+    
+    letter-spacing: -0.07rem;
+}
+

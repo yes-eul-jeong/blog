@@ -4,21 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/loader.css' | relative_url }}">
 
 </head>
-<body>
-    <header>
-        <h1>예슬 블로그</h1>
+<body class="container" >
+    <header class="d-flex justify-content-between pt-5 pb-4">
+        <a  href="{{site.baseurl}}/" class="fs-2 ">예슬 블로그</a>
         <nav>
-            <ul>
-                {% for tag in site.tags %}
-                <li><a href="{{ '/' | tag.TAG}}">{{tag}}</a></li>
-                {% endfor %}
-            </ul>
+          <a href="/" class="d-inline-block p-2">Sample</a> 
+          <a href="/" class="d-inline-block p-2">태그예시</a>
+          <a href="/" class="d-inline-block p-2">아무태그</a>
         </nav>
     </header>
 
-  {{ content }}
+    <div id="content">
+      {{ content }}
+
+    </div>
+
+  <footer class="py-3">
+    copyright &copy{{site.time | date: "%Y"}}
+  </footer>
 </body>
 </html>
