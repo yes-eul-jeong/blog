@@ -5,15 +5,15 @@ title: 메인페이지
 <!-- https://jekyllrb-ko.github.io/docs/variables/ -->
     <div>
   <ul class="list-unstyled">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
       <li class="py-4">
         <a href="{{ post.url | prepend: site.baseurl }}">
           <div class="d-flex justify-content-between align-items-baseline pb-2">
-            <h2 class="fs-2">{{ post.title }}</h2>
-            <p class="text-secondary">{{ post.date | date: "%B %d, %Y" }}</p>
+            <h2 class="fs-2 post_title">{{ post.title }}</h2>
+            <p class="post_data">{{ post.date | date: "%B %d, %Y" }}</p>
           </div>
           <div class="">
-            <p class="text-secondary ">{{post.excerpt | strip_html | truncatewords: 50}}</p>
+            <p class="post_exerpt">{{post.excerpt | strip_html | truncatewords: 50}}</p>
           </div>
 
         </a>
@@ -22,4 +22,31 @@ title: 메인페이지
     
   </ul>
     </div>
- 
+ <!-- Pagination links -->
+ {% if paginator.total_pages > 1 %}
+    <div class="pagination d-flex justify-content-center gap-2 mt-5">
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="btn btn-link text-decoration-none">&laquo;
+            Prev</a>
+        {% endif %}
+
+        {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+        <span class="btn btn-primary">{{ page }}</span>
+        {% else %}
+        {% if page == 1 %}
+        <a href="{{ '/' | relative_url }}" class="btn btn-link text-decoration-none">{{ page }}</a>
+        {% else %}
+        <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}"
+            class="btn btn-link text-decoration-none">{{
+            page }}</a>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}" class="btn btn-link text-decoration-none">Next
+            &raquo;</a>
+        {% endif %}
+    </div>
+    {% endif %}

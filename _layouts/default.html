@@ -9,22 +9,53 @@
   <link rel="stylesheet" href="{{ '/assets/css/loader.css' | relative_url }}?_={{ site.time | date:'%s' }}">
 
 </head>
+
 <body class="container" >
     <header class="d-flex justify-content-between pt-5 pb-4">
-        <a  href="{{site.baseurl}}/" class="fs-2 ">예슬 블로그</a>
+        <a  href="{{site.baseurl}}/" class="fs-2 post_title">예슬 블로그</a>
         <nav>
-          <a href="/" class="d-inline-block p-2">Sample</a> 
-          <a href="/" class="d-inline-block p-2">태그예시</a>
-          <a href="/" class="d-inline-block p-2">아무태그</a>
+          <a href="/" class="d-inline-block p-2 post_exerpt">Sample</a> 
+          <a href="/" class="d-inline-block p-2 post_exerpt">태그예시</a>
+          <a href="/" class="d-inline-block p-2 post_exerpt">아무태그</a>
         </nav>
+        <div class="theme">
+          <button id="theme-light" class="btn btn-outline-secondary">
+            light
+          </button>
+          <button id="theme-dark" class="btn btn-outline-secondary">
+            dark
+          </button>
+        </div>
     </header>
-
     <div id="content">
       {{ content }}
     </div>
-
+  
   <footer class="py-3">
     copyright &copy{{site.time | date: "%Y"}}
   </footer>
+
 </body>
 </html>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    
+    const applyTheme = (theme=null) => {
+      if (theme === null) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      } 
+      
+      document.body.classList.remove('theme-light', 'theme-dark');
+      document.body.classList.add(`theme-${theme}`);
+      
+      localStorage.setItem('theme', theme);
+    };
+
+    const theme = localStorage.getItem('theme');
+    applyTheme(theme);
+
+    ['dark','light'].forEach(theme => {
+      document.getElementById(`theme-${theme}`).addEventListener('click', applyTheme.bind(null, theme));
+    });//.bind가 뭔지
+  });
+</script>

@@ -2,8 +2,8 @@
 layout: default
 ---
 <div class="py-4">
-    <h1 class="py-2 fs-1">{{page.title}}</h1>
-    <p class="text-secondary">{{page.date | date: "%B %d, %Y"}}</p>
+    <h1 class="py-2 fs-1 post_title">{{page.title}}</h1>
+    <p class="post_data">{{page.date | date: "%B %d, %Y"}}</p>
 </div>
 <div class="content pb-5">
     {{ content }}
