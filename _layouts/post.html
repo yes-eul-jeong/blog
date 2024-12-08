@@ -15,6 +15,6 @@ layout: default
     {% endif %}
     <p class="d-block p-2 text-secondary">  현재글 : {{page.title}}</p>
     {% if page.previous.url %}
-        <a hclass="d-block " ref="{{ page.previous.url | prepend: site.baseurl }}" class="">&darr;이전글{{page.previous.title}}</a>
+        <a hclass="d-block " href="{{ page.previous.url | prepend: site.baseurl }}" class="">&darr;이전글{{page.previous.title}}</a>
     {% endif %}
 </div>
