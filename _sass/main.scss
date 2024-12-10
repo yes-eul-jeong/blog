@@ -43,6 +43,7 @@ color: white ;
     }
 }
 a{
+    text-decoration: none;
     color: var(--color3-dark);
     &:hover{
         color: var(--color-hyperlink-dark);
