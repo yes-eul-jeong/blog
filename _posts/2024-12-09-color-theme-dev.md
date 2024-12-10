@@ -39,7 +39,7 @@ categories: jekyll update color theme
 ```
 
 위에있는 light버튼과 dark버튼을 각각 클릭시 작동되게 코드를 짰다.
-참고로 아래의 코드는 개선된 코드이다. 개선 전 코드와 어떻게 개선했는지 보고싶으시면 [여기]({% post_url 2024-12-09-Refactoring-color-theme-code %})를 클릭하시오.
+참고로 아래의 코드는 개선된 코드이다. 개선 전 코드와 어떻게 개선했는지 보고싶으시면 [여기]({{ site.baseurl }}{% post_url 2024-12-09-Refactoring-color-theme-code %})를 클릭하시오.
 
 ```js
 document.addEventListener("DOMContentLoaded", () => {
