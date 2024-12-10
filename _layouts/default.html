@@ -39,7 +39,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     
-    const applyTheme = (theme=null) => {
+    const setTheme = (theme=null) => {
       if (theme === null) {
         theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       } 
@@ -51,10 +51,14 @@
     };
 
     const theme = localStorage.getItem('theme');
-    applyTheme(theme);
+    setTheme(theme);
 
-    ['dark','light'].forEach(theme => {
-      document.getElementById(`theme-${theme}`).addEventListener('click', applyTheme.bind(null, theme));
-    });//.bind가 뭔지
+
+    ["dark", "light"].forEach((theme) => {
+    const button = document.getElementById(`theme-${theme}`);
+    if (button) {
+      button.addEventListener("click", () => setTheme(theme));
+    }
+  });
   });
 </script>
