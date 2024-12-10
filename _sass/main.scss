@@ -9,6 +9,8 @@
     --color1-dark: #666;
     --color2-dark: #999;
     --color3-dark: #fff;
+    --color-hyperlink-light: #007bff;
+    --color-hyperlink-dark: #75b8ff;
   }
 
 
@@ -40,16 +42,18 @@ color: white ;
         color: var(--color2-dark);
     }
 }
+a{
+    color: var(--color3-dark);
+    &:hover{
+        color: var(--color-hyperlink-dark);
+    }
+}
 
 body {
     font-family: 'SUIT Variable', sans-serif;
     max-width: 900px !important;
 }
 
-a {
-    text-decoration: none;
-    color: #222;
-}
 
 h1,h2,h3,h4,h5,p {
     margin: 0;
