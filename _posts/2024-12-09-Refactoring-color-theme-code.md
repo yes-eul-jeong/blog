@@ -2,6 +2,7 @@
 layout: post
 title: "코드개선 - color theme 코드 개선안"
 date: 2024-12-09 19:32:28 +0900
+tags: [jekyll, UI/UX]
 categories: [jekyll, 코드개선, color theme]
 ---
 

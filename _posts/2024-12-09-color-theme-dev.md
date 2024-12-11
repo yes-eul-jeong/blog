@@ -2,7 +2,7 @@
 layout: post
 title: "jekyll - color theme를 만들자!"
 date: 2024-12-08 12:44:35 +0900
-categories: [jekyll, UI/UX]
+tags: [jekyll, UI/UX]
 ---
 
 # 블로그에 컬러테마 넣기

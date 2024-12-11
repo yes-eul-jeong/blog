@@ -1,5 +1,5 @@
 ---
 layout: tag
-tag: ui-ux
+tag: UI/UX
 permalink: /tags/ui-ux/
 ---

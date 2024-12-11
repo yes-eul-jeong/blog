@@ -16,23 +16,29 @@ layout: default
     <p class="d-block p-2 text-secondary">  현재글 : {{page.title}}</p>
     {% if page.previous.url %}
         <a class="d-block " href="{{ page.previous.url | prepend: site.baseurl }}" class="">&darr;이전글{{page.previous.title}}</a>
-    {% endif %}
-</div>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
+        {% endif %}
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
         let theme = localStorage.getItem('theme');
         if(!theme) {
             theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         };
         console.log('post.theme', theme);
-        const script = document.createElement('script');
-        script.src = "https://utteranc.es/client.js";
-        script.setAttribute("repo", "yes-eul-jeong/blog");
-        script.setAttribute("issue-term", "pathname");
-        script.setAttribute('theme', `github-${theme}`);
-        script.setAttribute('crossorigin', 'anonymous');
-        script.async = true;
-        document.body.appendChild(script);
+        const loadUtterances = (theme) => {
+            const script = document.createElement('script');
+            script.src = "https://utteranc.es/client.js";
+            script.setAttribute("repo", "yes-eul-jeong/blog");
+            script.setAttribute("issue-term", "pathname");
+            script.setAttribute('theme', `github-${theme}`);
+            script.setAttribute('crossorigin', 'anonymous');
+            script.async = true;
+            document.body.appendChild(script);
+        };
+        
+        loadUtterances(theme);
     });
-
+    
 </script>
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+

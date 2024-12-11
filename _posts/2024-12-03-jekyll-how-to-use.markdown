@@ -2,7 +2,7 @@
 layout: post
 title: "jekyll - 사용을 해보자!"
 date: 2024-12-03 20:30:03 +0900
-tags: [jekyll, how to]
+tags: [jekyll, new project]
 ---
 
 # jekyll다루는 법 알아보기
