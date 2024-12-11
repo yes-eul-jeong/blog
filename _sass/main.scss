@@ -32,8 +32,11 @@ body.theme-light {
      .tag-name {
         color: var(--color3-light);
         background-color: var(--box-color);
+        border: 1px solid var(--box-color);
+
     &:hover {
-            background-color: var(--color-hyperlink-light);
+            background-color: transparent;
+            border: 1px solid var(--color3-light);
             color: var(--color3-light);
         }
     }
@@ -42,7 +45,16 @@ body.theme-light {
         color: var(--color2-light);
         margin-left: 0.5rem;
     }
+    a{
+        color: var(--color3-light);
+    &:hover{
+        color: var(--color-hyperlink-light);
+    }
+    }
   }
+
+
+
 body.theme-dark {
 background-color: black;
 color: white ;
@@ -57,11 +69,13 @@ color: white ;
     }
     // dark tag style
     .tag-name {
+        box-sizing: border-box;
         color: var(--color3-dark);
         background-color: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
     &:hover {
-            background-color: var(--color-hyperlink-dark);
-            color: var(--color3-dark);
+        background-color: none;
+        border: 1px solid var(--color3-dark);
         }
     }
     .tag-count {
@@ -69,13 +83,28 @@ color: white ;
         color: var(--color2-dark);
         margin-left: 0.5rem;
     }
-}
-a{
-    text-decoration: none;
-    color: var(--color3-dark);
+    li:hover {
+        background-color: rgba(255,255,255,0.05);
+      }
+    a{
+        color: var(--color3-dark);
     &:hover{
         color: var(--color-hyperlink-dark);
     }
+    }
+    .mobile-menu {
+        color: var(--color3-dark);
+        background-color: rgba(36, 36, 36, 0.95);
+    }
+    #toggle-tags {
+        color: var(--color3-dark);
+    }
+}
+
+
+a{
+    text-decoration: none;
+    
 }
 
 body {
@@ -119,3 +148,65 @@ font-size: 1.5rem;
    font-size: 1rem;
 }
 
+h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  li:hover {
+    background-color: #f9f9f9;
+  }
+  
+ 
+  
+  
+  
+  small {
+    display: block;
+    color: #666;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+
+  .long-header-item {
+    display: block;
+}
+.short-header-item {
+    display: none;
+}
+.mobile-menu {
+    position: absolute;
+    width: 100%;
+    top: auto;
+    left: 0;
+    background: rgb(255, 255, 255, 0.95);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    h3 {
+        margin: 15px 0 10px;
+    }
+}
+/* 모바일 환경에서는 long-nav-bar를 숨기고 short-nav-bar를 보이도록 설정 */
+@media (max-width: 768px) {
+    .long-header-item {
+        display: none;
+    }
+    .short-header-item {
+        display: block;
+    }
+}

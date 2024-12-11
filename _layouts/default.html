@@ -12,7 +12,7 @@
 <body class="container" >
     <header class="d-flex justify-content-between pt-5 pb-4">
         <a  href="{{site.baseurl}}/" class="fs-2 post_title">예슬 블로그</a>
-        <nav>
+        <nav class="long-header-item">
           {% for tag in site.tags %}
           <a href="{{site.baseurl}}/tags/{{tag[0]| slugify}}" class="d-inline-block p-2 tag-name">
             {{ tag[0] }}
@@ -21,10 +21,9 @@
             </span>
           </a> 
           {% endfor %}
-
-          <!-- <a href="{{ site.baseurl }}/tags/jekyll" class="tag d-inline-block p-1">jekyll({{ site.tags['jekyll'].size | default: 0 }})</a> -->
         </nav> 
-        <div class="theme">
+        
+        <div class="theme long-header-item">
           <button id="theme-light" class="btn btn-outline-secondary" style="margin-right: 5px;">
             light
           </button>
@@ -32,6 +31,30 @@
             dark
           </button>
         </div>
+
+        <nav class="short-header-item">
+          <button id="toggle-tags" class="btn">menu</button>
+          <div id="mobile-tags" class="mobile-menu" style="display: none;">
+            <h3>Tags</h3>
+              {% for tag in site.tags %}
+              <a href="{{site.baseurl}}/tags/{{tag[0]| slugify}}" class="d-inline-block p-2 tag-name">
+                  {{ tag[0] }}
+                  <span class="tag-count">
+                      {{ tag[1].size | default: 0}}
+                  </span>
+              </a> 
+              {% endfor %}
+              <h3>Mode</h3>
+              <div>
+                <button id="mobile-theme-light" class="btn" style="margin-right: 5px;">
+                  light
+                </button>
+                <button id="mobile-theme-dark" class="btn">
+                  dark
+                </button>
+              </div>
+          </div>
+      </nav>
     </header>
     <div id="content">
       {{ content }}
@@ -45,7 +68,6 @@
 </html>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-
     const updateButtonStyles = (activeButton, inactiveButton) => {
       activeButton.classList.add('active');
       activeButton.classList.remove('btn-outline-secondary');
@@ -65,24 +87,43 @@
 
       const lightButton = document.getElementById('theme-light');
       const darkButton = document.getElementById('theme-dark');
+      const mobileLightButton = document.getElementById('mobile-theme-light');
+      const mobileDarkButton = document.getElementById('mobile-theme-dark');
+
 
       if (theme === 'light') {
         updateButtonStyles(lightButton, darkButton);
+        updateButtonStyles(mobileLightButton, mobileDarkButton);
       } else {
         updateButtonStyles(darkButton, lightButton);
+        updateButtonStyles(mobileDarkButton, mobileLightButton);
       }
   
+      console.log(theme,'thmee')
     };
-
+    
     const theme = localStorage.getItem('theme');
     setTheme(theme);
-
+    
 
     ["dark", "light"].forEach((theme) => {
     const button = document.getElementById(`theme-${theme}`);
+    const mobileButton =  document.getElementById(`mobile-theme-${theme}`);
+    console.log(button, 'button')
     if (button) {
       button.addEventListener("click", () => setTheme(theme));
+    } 
+    if(mobileButton) {
+      mobileButton.addEventListener("click", () => setTheme(theme));
     }
   });
   });
+  document.getElementById('toggle-tags').addEventListener('click', function() {
+        var mobileTags = document.getElementById('mobile-tags');
+        if (mobileTags.style.display === 'none' || mobileTags.style.display === '') {
+            mobileTags.style.display = 'flex';
+        } else {
+            mobileTags.style.display = 'none';
+        }
+    });
 </script>
