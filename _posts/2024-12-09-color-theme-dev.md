@@ -2,7 +2,7 @@
 layout: post
 title: "jekyll - color theme를 만들자!"
 date: 2024-12-08 12:44:35 +0900
-categories: jekyll update color theme
+categories: [jekyll, UI/UX]
 ---
 
 # 블로그에 컬러테마 넣기
@@ -15,7 +15,7 @@ categories: jekyll update color theme
 기본 os에 설정된 모드와 관계없이 유저가 해당 사이트 내에서는 모드를 자유롭게 바꿀 수 있게 해봤다.
 '라이트'버튼과 '다크'버튼 두 개를 유저가 클릭 할 수 있게 하고, 클릭시 모드가 변경되며, 로컬스토리지에 설정한 값을 저장해두어 사이트를 재접속하더라도 모드가 유지되도록 하였다.
 
-아래는 html코드이다.
+아래는 default.html코드이다.
 모드 선택 하는 버튼을 대게는 footer나 안쪽으로 숨기나 나는 지금 기능이 많은것도 아니고 자랑하고싶으니 헤더에 떡하니 박아넣을것이다.
 <br/>
 <br/>
@@ -53,6 +53,7 @@ categories: jekyll update color theme
 <br/>
 
 ```js
+//default.html의 script 부분
 document.addEventListener("DOMContentLoaded", () => {
   const setTheme = (theme = null) => {
     if (!theme) {
@@ -86,11 +87,14 @@ document.addEventListener("DOMContentLoaded", () => {
 root에 컬러를 변수로 지정해줬다. 나중에 수정하기 편하려고...
 위에 js를 따라 body 혹은 html에 테마에맞는 클래스가 추가되고 그 클래스 안에서 color를 지정해줬다.
 
+
 ```css
+/* _sass/main.scss */
 :root {
   --bg-color-light: #fff;
   --bg-color-dark: #000;
-  --box-color: rgba(0, 0, 0, 0.05);
+
+  --box-color: rgb(0, 0, 0, 0.05);
   --color1-light: #ccc;
   --color2-light: #999;
   --color3-light: #000;
@@ -112,8 +116,10 @@ body.theme-light {
   .post_data {
     color: var(--color1-light);
   }
-  .post_exerpt {
+  .post_excerpt {
     color: var(--color2-light);
+  }
+  .box-color {
   }
 }
 body.theme-dark {
@@ -125,7 +131,7 @@ body.theme-dark {
   .post_data {
     color: var(--color1-dark);
   }
-  .post_exerpt {
+  .post_excerpt {
     color: var(--color2-dark);
   }
 }

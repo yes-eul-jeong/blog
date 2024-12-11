@@ -13,12 +13,19 @@
     <header class="d-flex justify-content-between pt-5 pb-4">
         <a  href="{{site.baseurl}}/" class="fs-2 post_title">예슬 블로그</a>
         <nav>
-          <a href="/" class="d-inline-block p-2 post_exerpt">Sample</a> 
-          <a href="/" class="d-inline-block p-2 post_exerpt">태그예시</a>
-          <a href="/" class="d-inline-block p-2 post_exerpt">아무태그</a>
-        </nav>
+          {% for tag in site.tags %}
+          <a href="{{site.baseurl}}/tags/{{tag[0]| slugify}}" class="d-inline-block p-2 tag-name">
+            {{ tag[0] }}
+             <span class="tag-count">
+              {{ tag[1].size | default: 0}}
+            </span>
+          </a> 
+          {% endfor %}
+
+          <!-- <a href="{{ site.baseurl }}/tags/jekyll" class="tag d-inline-block p-1">jekyll({{ site.tags['jekyll'].size | default: 0 }})</a> -->
+        </nav> 
         <div class="theme">
-          <button id="theme-light" class="btn btn-outline-secondary">
+          <button id="theme-light" class="btn btn-outline-secondary" style="margin-right: 5px;">
             light
           </button>
           <button id="theme-dark" class="btn btn-outline-secondary">
@@ -38,6 +45,13 @@
 </html>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+
+    const updateButtonStyles = (activeButton, inactiveButton) => {
+      activeButton.classList.add('active');
+      activeButton.classList.remove('btn-outline-secondary');
+      inactiveButton.classList.remove('active');
+      inactiveButton.classList.add('btn-outline-secondary');
+    };
     
     const setTheme = (theme=null) => {
       if (theme === null) {
@@ -48,6 +62,16 @@
       document.body.classList.add(`theme-${theme}`);
       
       localStorage.setItem('theme', theme);
+
+      const lightButton = document.getElementById('theme-light');
+      const darkButton = document.getElementById('theme-dark');
+
+      if (theme === 'light') {
+        updateButtonStyles(lightButton, darkButton);
+      } else {
+        updateButtonStyles(darkButton, lightButton);
+      }
+  
     };
 
     const theme = localStorage.getItem('theme');

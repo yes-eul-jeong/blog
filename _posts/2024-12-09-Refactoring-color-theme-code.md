@@ -2,7 +2,7 @@
 layout: post
 title: "코드개선 - color theme 코드 개선안"
 date: 2024-12-09 19:32:28 +0900
-categories: jekyll 코드개선 color theme Refactoring
+categories: [jekyll, 코드개선, color theme]
 ---
 
 코드 개선
@@ -146,4 +146,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 - 이벤트 리스너에서 `this`를 사용하지 않으므로 `this`의 컨텍스트를 명시적으로 표햔할 필요까진 없다.
 
-위와같은 이유라면 이 상황에선 `bind`가 아닌 `arrow fucntion`을 사용하는게 맞는것같다!
+위와같은 이유라면 이 상황에선 `bind`가 아닌 `arrow function`을 사용하는게 맞는것같다!

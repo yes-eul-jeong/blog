@@ -2,7 +2,7 @@
 layout: post
 title: "jekyll - 세팅을 해보자!"
 date: 2024-12-03 19:32:28 +0900
-categories: jekyll update setting
+tags: [jekyll, new project]
 ---
 
 # jekyll 프로젝트에 적용하기
@@ -28,7 +28,7 @@ GCC 와 Make도 필요하다함.
 >
 > `xcode-select --install`
 >
-> 위 명령어로 Navite확장기능을 컴파일 할 수 있게 해야한단다. 뭔말인지는 모름.
+> 위 명령어로 Native확장기능을 컴파일 할 수 있게 해야한단다. 뭔말인지는 모름.
 >
 > 1. 홈브루 설치하기. 만약 설치되어있으면 건너뛰기
 >
