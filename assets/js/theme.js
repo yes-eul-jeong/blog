@@ -38,7 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
         type: "set-theme",
         theme: `github-${theme}`,
       };
-      utterancesFrame.contentWindow.postMessage(message, "https://utteranc.es");
+      utterancesFrame.contentWindow.postMessage(
+        message,
+        "https://yes-eul-jeong.github.io"
+      );
       console.log(message);
     }
   };
