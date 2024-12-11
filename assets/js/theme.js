@@ -69,9 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         utterancesFrame.contentWindow.postMessage(
           message,
-          "https://utteranc.es"
+          "https://yes-eul-jeong.github.io"
         );
-        console.log("Message sent after load:", message);
+        console.log("Message", message);
       });
       observer.disconnect(); // 더 이상 관찰하지 않음
     }
