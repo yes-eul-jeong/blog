@@ -182,7 +182,7 @@ layout: default
 
 ```
 
-![tag code 이미지](/assets/img/2024-12-12-tag-nav-code.png)
+![tag code 이미지]({{site.baseurl}}/assets/img/2024-12-12-tag-nav-code.png)
 
 <br>
 
