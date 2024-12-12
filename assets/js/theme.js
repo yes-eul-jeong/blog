@@ -56,26 +56,4 @@ document.addEventListener("DOMContentLoaded", () => {
       mobileButton.addEventListener("click", () => setTheme(theme));
     }
   });
-
-  // iframe이 로드된 후에 메시지를 보내도록 설정
-  const observer = new MutationObserver(() => {
-    const utterancesFrame = document.querySelector("iframe.utterances-frame");
-    if (utterancesFrame) {
-      utterancesFrame.addEventListener("load", () => {
-        const theme = localStorage.getItem("theme") || "light";
-        const message = {
-          type: "set-theme",
-          theme: `github-${theme}`,
-        };
-        utterancesFrame.contentWindow.postMessage(
-          message,
-          "https://yes-eul-jeong.github.io"
-        );
-        console.log("Message", message);
-      });
-      observer.disconnect(); // 더 이상 관찰하지 않음
-    }
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
 });
