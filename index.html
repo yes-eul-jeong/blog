@@ -6,9 +6,9 @@ title: 메인페이지
     <div>
   <ul class="list-unstyled">
     {% for post in paginator.posts %}
-      <li class="py-4">
+      <li class="py-4 post-list">
         <a href="{{ post.url | prepend: site.baseurl }}">
-          <div class="d-flex justify-content-between align-items-baseline pb-2">
+          <div class="d-flex justify-content-between align-items-start pb-2">
             <h2 class="fs-2 post_title">{{ post.title }}</h2>
             <p class="post_data">{{ post.date | date: "%B %d, %Y" }}</p>
           </div>
