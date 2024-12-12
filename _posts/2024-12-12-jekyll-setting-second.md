@@ -182,7 +182,11 @@ layout: default
 
 ```
 
-![tag code 이미지]({{site.baseurl}}/assets/img/2024-12-12-tag-nav-code.png)
+...이미지로 봅시다!
+
+![tag html 코드 이미지]({{site.baseurl}}/assets/img/2024-12-12-tag-html.png)
+
+
 
 <br>
 
@@ -238,6 +242,7 @@ categories도 아니고 tags인데... 원래 태그는 한 개시물에 여러�
 ```html
 //default.html
 //생략
+
  <nav class="long-header-item">
      {% for tag in site.tags %}
      <a href="{{site.baseurl}}/tags/{{tag[0]| slugify}}" class="d-inline-block p-2 tag-name">
@@ -250,6 +255,12 @@ categories도 아니고 tags인데... 원래 태그는 한 개시물에 여러�
  </nav> 
 //생략
 ```
+내가 작성한 코드가 아닌 빌드된 코드가 보일것이다. 
+그래서 코드를 이미지로 가져왔어용!
+코드 복붙 하고싶으시면... github로 오세요!
+
+![tag code 이미지]({{site.baseurl}}/assets/img/2024-12-12-tag-nav-code.png)
+
 <br>
 여기까지하면 잘 보일거다. 
 <br>
