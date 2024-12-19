@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Postmessage와 PJAX를 적용해보자"
-date: 2024-12-03 20:30:03 +0900
+date: 2024-12-19 14:20:03 +0900
 tags: [jekyll, dev, pjax]
 ---
 
@@ -107,14 +107,14 @@ spa로 개발하며 웹앱의 route만 관리하다보니 js의 history관련 �
 <br>
 
 #### 히스토리 API
-popstate : 뒤로가기, 앞으로가기
-replaceState:현재 히스토리를 다른 히스토리로 대체하기(덮어쓰기)
-pushstate:새 히스토리 스택 추가
-주로 위 세개가 쓰이고 다른것도 몇개 있다. 
-history.back() : 뒤로가기
-history.forward() : 앞으로가기
-history.go(delta) : -1은 뒤로 1만큼, 1은 앞으로 1만큼
-history.length : 스택의 길이를 반환(방문한 페이지 수)
+popstate : 뒤로가기, 앞으로가기<br>
+replaceState:현재 히스토리를 다른 히스토리로 대체하기(덮어쓰기)<br>
+pushstate:새 히스토리 스택 추가<br><br>
+주로 위 세개가 쓰이고 다른것도 몇개 있다. <br><br>
+history.back() : 뒤로가기<br>
+history.forward() : 앞으로가기<br>
+history.go(delta) : -1은 뒤로 1만큼, 1은 앞으로 1만큼<br>
+history.length : 스택의 길이를 반환(방문한 페이지 수)<br>
 
 
 
