@@ -22,6 +22,7 @@ body.theme-light {
     color: black;
     background-color: var(--bg-color-light);
     color:var(--color3-light);
+   
     .post_title {
         color: var(--color3-light);
     }
@@ -120,7 +121,6 @@ h1,h2,h3,h4,h5,p {
     margin: 0;
 }
 h1,h2,h3,h4,h5 {
-    
     letter-spacing: -0.07rem;
 }
 
@@ -153,7 +153,6 @@ font-size: 1.5rem;
 
 h2 {
     font-size: 1.5rem;
-    color: #333;
     padding-bottom: 0.5rem;
   }
   
