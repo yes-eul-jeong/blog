@@ -2,7 +2,8 @@
 :root {
     --bg-color-light: #fff;
     --bg-color-dark: #000;
-    --box-color: rgba(0,0,0,0.05);
+    --box-color-light: rgba(0,0,0,0.05);
+    --box-color-dark: rgba(255, 255, 255, 0.05);
     --color1-light: #ccc;
     --color2-light: #999;
     --color3-light: #000;
@@ -16,13 +17,23 @@
     line-height: 1.7;
   }
 
-
+  
+  
 body.theme-light {
     background-color: white;
     color: black;
     background-color: var(--bg-color-light);
     color:var(--color3-light);
-   
+    blockquote {
+        background-color: var(--box-color-light);
+    border-left: 4px solid var(--color3-light);
+
+        padding: 1rem;
+        border-radius: 0 5px 5px 0;
+        margin: 1rem 0;
+        color: var(--color3-light);
+    }
+
     .post_title {
         color: var(--color3-light);
     }
@@ -35,8 +46,8 @@ body.theme-light {
      // light tag style
      .tag-name {
         color: var(--color3-light);
-        background-color: var(--box-color);
-        border: 1px solid var(--box-color);
+        background-color: var(--box-color-light);
+        border: 1px solid var(--box-color-light);
 
     &:hover {
             background-color: transparent;
@@ -62,6 +73,15 @@ body.theme-light {
 body.theme-dark {
 background-color: black;
 color: white ;
+blockquote {
+    border-left: 4px solid var(--color3-dark);
+    background-color: var(--box-color-dark);
+    color: var(--color2-dark);
+    padding: 10px;
+    margin: 0 0 16px 0;
+    border-radius: 0 5px 5px 0;  
+
+}
     .post_title {
         color: var(--color3-dark);
     }
@@ -173,9 +193,16 @@ h2 {
   }
   
  
+ 
   
-  
-  
+  #post-page li {
+    margin: 10px auto;
+  }
+  #post-page ul {
+    list-style-type: revert;
+    padding-left:2rem;
+}   
+
   small {
     display: block;
     color: #666;
@@ -214,4 +241,8 @@ img {
     .short-header-item {
         display: block;
     }
+}
+
+.show-box {
+    background-color: rgba(125, 125, 125, 0.05);
 }
