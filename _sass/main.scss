@@ -233,6 +233,10 @@ img {
     width: 100%;
     height: auto;
 }
+
+td {
+    padding : 5px;
+}
 /* 모바일 환경에서는 long-nav-bar를 숨기고 short-nav-bar를 보이도록 설정 */
 @media (max-width: 768px) {
     .long-header-item {
