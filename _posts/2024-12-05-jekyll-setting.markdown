@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "jekyll - 세팅을 해보자!"
-date: 2024-12-03 19:32:28 +0900
+date: 2024-12-05 19:32:28 +0900
 tags: [jekyll, new project]
 ---
 

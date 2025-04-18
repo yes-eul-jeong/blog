@@ -238,7 +238,9 @@ github에 있는 readme.md가 마크다운이다. md가 바로 마크다운의 �
 
 이미지도 넣을 수 있어요!
 ![강아지]({{site.baseurl}}/assets/img/pie-in-hanriver.jpeg "파이사진")
-
+```
+![강아지]({{site.baseurl}}/assets/img/pie-in-hanriver.jpeg "파이사진")
+```
 <br>
 
 ## 8. 표
