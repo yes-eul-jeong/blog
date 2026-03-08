@@ -17,13 +17,34 @@
     line-height: 1.7;
   }
 
-  
+  table {
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed;
+  }
   
 body.theme-light {
     background-color: white;
     color: black;
     background-color: var(--bg-color-light);
     color:var(--color3-light);
+    table {
+        border: 1px solid var(--color2-light);
+        th {
+            border-bottom: 2px solid var(--color2-light);
+            border-right : 1px solid var(--color2-light);
+            :last-child {
+                border-right : none;
+            }
+        }
+        td {
+            border-bottom: 1px solid var(--color2-light);
+            border-right : 1px solid var(--color2-light);
+            :last-child {
+                border-right : none;
+            }
+        }
+    }
     blockquote {
         background-color: var(--box-color-light);
     border-left: 4px solid var(--color3-light);
@@ -76,6 +97,23 @@ body.theme-light {
 body.theme-dark {
 background-color: black;
 color: white ;
+    table {
+        border : 1px solid var(--color2-dark);
+        th {
+            border-bottom: 2px solid var(--color2-dark);
+            border-right : 1px solid var(--color2-dark);
+            :last-child {
+                border-right : none;
+            }
+        }
+        td {
+            border-bottom: 1px solid var(--color2-dark);
+            border-right : 1px solid var(--color2-dark);
+            :last-child {
+                border-right : none;
+            }
+        }
+    }
 blockquote {
     border-left: 4px solid var(--color3-dark);
     background-color: var(--box-color-dark);
